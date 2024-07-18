@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDo - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <img src="logo.webp" alt="McDo Logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="login">
+            <div class="container">
+                <h2>Login to Your Account</h2>
+                <form id="loginForm" onsubmit="return handleLogin()">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#signup">Sign up</a></p>
+            </div>
+        </section>
+        <section id="signup" class="signup">
+            <div class="container">
+                <h2>Sign Up for an Account</h2>
+                <form id="signupForm" onsubmit="return handleSignup()">
+                    <div class="form-group">
+                        <label for="signup-email">Email:</label>
+                        <input type="email" id="signup-email" name="signup-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password:</label>
+                        <input type="password" id="signup-password" name="signup-password" required>
+                    </div>
+                    <button type="submit" class="btn">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="#">Login</a></p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 McDo. All rights reserved. | <small>For educational purposes only.</small></p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        function handleLogin() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            if (email === 'user@example.com' && password === 'password') {
+                alert('Login successful!');
+                window.location.href = 'dashboard.html';
+                return false; 
+            } else {
+                alert('Invalid email or password. Please try again.');
+                return false; 
+            }
+        }
+
+        function handleSignup() {
+            var signupEmail = document.getElementById('signup-email').value;
+            var signupPassword = document.getElementById('signup-password').value;
+
+
+            alert('Signup successful for ' + signupEmail + '! Redirecting to login page.');
+            window.location.href = 'login.html'; 
+            return false; 
+        }
+    </script>
+</body>
+</html>
